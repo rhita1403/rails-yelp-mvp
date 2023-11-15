@@ -7,3 +7,20 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "Cleaning database..."
+Restaurant.destroy_all
+
+puts "Creating restaurants..."
+belgium = { name: "Belgium", address: "7 Boundary St, London E2 7JE", phone_number: 532, category: "belgian" }
+italy = { name: "Italy", address: "7 Boundary St, London E2 7JE", phone_number: 533, category: "italian" }
+china = { name: "China", address: "7 Boundary St, London E2 7JE", phone_number: 534, category: "chinese" }
+japan = { name: "Japan", address: "7 Boundary St, London E2 7JE", phone_number: 535, category: "japanese" }
+france = { name: "France", address: "7 Boundary St, London E2 7JE", phone_number: 536, category: "french" }
+
+
+[belgium, italy, china, japan, france].each do |attributes|
+  restaurant = Restaurant.create!(attributes)
+  puts "Created #{restaurant.name}"
+end
+puts "Finished!"

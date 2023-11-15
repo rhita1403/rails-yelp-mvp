@@ -7,4 +7,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get "restaurants", to: "restaurants#index"
+  # rails g controller restaurants après avoir créé la route, mais une fois par modele
+  get "restaurants/:id", to: "restaurants#show"
+  get "restaurants/new", to: "restaurants#new"
+  post "restaurants", to: "restaurants#create"
 end
